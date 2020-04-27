@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>折线图</title>
+  <!--  引入echarts-->
+  <script src="../js/echarts.js"></script>
+</head>
+<body>
+<!--定义画布-->
+<div id="main" style="height: 400px;width: 600px"></div>
+<script type="text/javascript">
+  // 进行echarts的初始化
+  let mychart = echarts.init(document.getElementById('main'));
+  //配置项和配置数据
+  let option = {
+    title: {
+      text: '折线图示例',
+      subtext: '这里是副标题'
+    },
+    tooltip: {},
+    legend: {
+      data: ['衬衫', '袜子', '裤子']
+    },
+    xAxis: {
+      data: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日']
+    },
+    yAxis: {},
+    //数据
+    series: [
+      {
+        name: '衬衫',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 120]
+      },
+      {
+        name: '袜子',
+        type: 'bar',
+        data: [15, 200, 316, 130, 110, 20]
+      },
+      {
+        name: '裤子',
+        type: 'line',
+        data: [51, 204, 36, 110, 90, 200]
+      }
+    ]
+  };
+
+  mychart.setOption(option)
+
+
+</script>
+
+</body>
+</html>
